@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Registered Users</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Registered Users</h2>
+        <% if (users && users.length > 0) { %>
+            <ul>
+                <% users.forEach(function(user) { %>
+                    <li><strong><%= user.name %></strong> — <%= user.email %></li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>No users registered yet.</p>
+        <% } %>
+        <p><a href="/">Register a new user</a></p>
+        <p><a href="/logout">Logout</a></p>
+    </div>
+</body>
+</html>
