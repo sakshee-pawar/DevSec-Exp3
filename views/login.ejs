@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <% if (messages && messages.length > 0) { %>
+            <ul>
+                <% messages.forEach(function(message) { %>
+                    <li style="color: red;"><%= message %></li>
+                <% }); %>
+            </ul>
+        <% } %>
+        <form action="/login" method="POST">
+            <label>Email:</label><br>
+            <input type="email" name="email" required><br>
+            <label>Password:</label><br>
+            <input type="password" name="password" required><br><br>
+            <input type="submit" value="Login">
+        </form>
+        <p>No account? <a href="/">Register here</a></p>
+    </div>
+</body>
+</html>
